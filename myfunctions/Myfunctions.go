@@ -8,11 +8,14 @@ import (
 
 func main() {
 }
+
+//generates a random number
 func RandomNumberGenerator() int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(100)
 }
 
+//generates a random string
 func GenerateRandomString(max int64) string {
 	b := make([]byte, max)
 	_, err := rand.Read(b)
@@ -21,6 +24,8 @@ func GenerateRandomString(max int64) string {
 	}
 	return base64.URLEncoding.EncodeToString(b)
 }
+
+//checks if the args are correct
 func CheckArgs(args string) bool {
 	switch args {
 	case
